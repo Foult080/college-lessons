@@ -17,6 +17,10 @@ app.post('/api/', async (req, res) => {
   return res.status(201).json({ msg: `Привет ${name}!` });
 });
 
+// добавляем директорию с версткой
+app.use(express.static(path.join(__dirname, 'public')));
+app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'public', 'index.html')));
+
 // константа с портом
 const PORT = 5000;
 
