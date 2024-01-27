@@ -2,7 +2,6 @@
  * Приветствие пользователя
  */
 async function sayHello() {
-  debugger;
   const input = document.getElementById('user-name');
   const userName = input.value;
   const request = await fetch('/api', {
